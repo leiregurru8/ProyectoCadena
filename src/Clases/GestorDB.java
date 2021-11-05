@@ -36,6 +36,9 @@ public class GestorDB {
 	/**
 	 * Genera las tablas necesarias en caso de que éstas no hayan sido creadas
 	 */
+	/**
+	 * 
+	 */
 	private static void crearTablas() {
 		try {
 			Statement stmt = con.createStatement();
@@ -127,6 +130,9 @@ public class GestorDB {
 		}
 	}
 	
+	/**
+	 * @return
+	 */
 	public static ArrayList<TipoRestaurante> getTiposRestaurantes() {
 		ArrayList<TipoRestaurante> tiposRestaurantes = new ArrayList();
 		try {
