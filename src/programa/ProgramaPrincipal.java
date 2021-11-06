@@ -1,4 +1,6 @@
-import Clases.GestorDB;
+package programa;
+
+import clases.GestorDB;
 
 public class ProgramaPrincipal {
 
