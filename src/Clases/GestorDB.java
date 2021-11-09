@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
- * Clase estática para gestionar la conexión con la base de datos
+ * Clase estï¿½tica para gestionar la conexiï¿½n con la base de datos
  * @author Pablo Alberdi
  * @author Julen Alboniga-Menor
  * @author Leire Gurrutxaga
@@ -20,12 +20,12 @@ public class GestorDB {
 	private static Connection con;
 	
 	/**
-	 * Establece la conexión con la base de datos
+	 * Establece la conexiï¿½n con la base de datos
 	 */
 	public static void conectar() {
 		try {
 			con = DriverManager.getConnection(url);
-			System.out.println("Conexión a la BD realizada con éxito");
+			System.out.println("Conexiï¿½n a la BD realizada con ï¿½xito");
 			crearTablas();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -34,11 +34,9 @@ public class GestorDB {
 	}
 	
 	/**
-	 * Genera las tablas necesarias en caso de que éstas no hayan sido creadas
+	 * Genera las tablas necesarias en caso de que ï¿½stas no hayan sido creadas
 	 */
-	/**
-	 * 
-	 */
+	
 	private static void crearTablas() {
 		try {
 			Statement stmt = con.createStatement();
@@ -58,7 +56,7 @@ public class GestorDB {
 			stmt.execute(t6);
 			stmt.execute(t7);
 			
-			System.out.println("Tablas creadas con éxito");
+			System.out.println("Tablas creadas con ï¿½xito");
 			insertInicial();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -66,7 +64,7 @@ public class GestorDB {
 		}
 	}
 	/**
-	 * Precargar las tablas necesarias con información de Tipos de restaurantes, restaurantes, tipos de platos y platos
+	 * Precargar las tablas necesarias con informaciï¿½n de Tipos de restaurantes, restaurantes, tipos de platos y platos
 	 */
 	private static void insertInicial() {
 		try {
@@ -77,10 +75,10 @@ public class GestorDB {
 			String i3 = "INSERT OR IGNORE INTO TipoRest(idTipoRest, Nombre) VALUES(3, 'Chino');";
 			String i4 = "INSERT OR IGNORE INTO TipoRest(idTipoRest, Nombre) VALUES(4, 'Turco');";
 			//RESTAURANTE
-			String i5 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(1, 'Tagliatelle', 'Calle San Martín', 1, 0);";
-			String i6 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(2, 'El Chile Picón', 'Plaza Nafarroa', 2, 1);";
-			String i7 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(3, 'Tagliatelle', 'Calle San Martín', 3, 1);";
-			String i8 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(4, 'Tagliatelle', 'Calle San Martín', 4, 0);";
+			String i5 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(1, 'Tagliatelle', 'Calle San Martï¿½n', 1, 0);";
+			String i6 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(2, 'El Chile Picï¿½n', 'Plaza Nafarroa', 2, 1);";
+			String i7 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(3, 'Tagliatelle', 'Calle San Martï¿½n', 3, 1);";
+			String i8 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(4, 'Tagliatelle', 'Calle San Martï¿½n', 4, 0);";
 			//TIPO PLATO
 			String i9 = "INSERT OR IGNORE INTO TipoPlato(idTipoPlato, Nombre) VALUES (1, 'Pizza');";
 			String i10 = "INSERT OR IGNORE INTO TipoPlato(idTipoPlato, Nombre) VALUES (2, 'Pasta');";
@@ -88,15 +86,15 @@ public class GestorDB {
 			String i12 = "INSERT OR IGNORE INTO TipoPlato(idTipoPlato, Nombre) VALUES (4, 'Platos principales');";
 			String i23 = "INSERT OR IGNORE INTO TipoPlato(idTipoPlato, Nombre) VALUES (5, 'Postres');";
 			//PLATOS
-			String i13 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(1, 'Pizza Carbonara', 'Nata, Champiñones, Bacon', 1, 14.99, 1);";
-			String i14 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(2, 'Pizza Jamon y Queso', 'Tomate, Jamón, Queso', 1, 9.99, 1);";
-			String i15 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(3, 'Tallarines Carbonara', 'Tallarines, Nata, Champiñones, Bacon', 2, 12.99, 1);";
-			String i16 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(4, 'Raviollis de Atún', 'Raviollis, Atún, Salsa parmesano', 2, 10.99, 1);";
+			String i13 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(1, 'Pizza Carbonara', 'Nata, Champiï¿½ones, Bacon', 1, 14.99, 1);";
+			String i14 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(2, 'Pizza Jamon y Queso', 'Tomate, Jamï¿½n, Queso', 1, 9.99, 1);";
+			String i15 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(3, 'Tallarines Carbonara', 'Tallarines, Nata, Champiï¿½ones, Bacon', 2, 12.99, 1);";
+			String i16 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(4, 'Raviollis de Atï¿½n', 'Raviollis, Atï¿½n, Salsa parmesano', 2, 10.99, 1);";
 			String i17 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(5, 'Tacos', 'Carne desmechada, Pimiento Rojo, Pimiento Verde, Salsa Chiltepin', 4, 8.99, 2);";
 			String i18 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(6, 'Totopos', 'Nachos con guacamole, queso y creamcheese', 2, 7.99, 2);";
 			String i19 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(7, 'Galleta de la suerte', 'Descubre tu futuro', 5, 0.99, 3);";
-			String i20 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(8, 'Gyoza', 'Empanadillas de Pekín', 3, 2.99, 3);";
-			String i21 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(9, 'Tataki de atún', 'Tacos sabrosos de atún', 4, 19.99, 3);";
+			String i20 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(8, 'Gyoza', 'Empanadillas de Pekï¿½n', 3, 2.99, 3);";
+			String i21 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(9, 'Tataki de atï¿½n', 'Tacos sabrosos de atï¿½n', 4, 19.99, 3);";
 			String i22 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(10, 'Kebab Especial', 'Carne, patatas fritas, lechuga, abundante salsa blanca', 4, 4.99, 4);";
 			
 			stmt.execute(i1);
@@ -123,7 +121,7 @@ public class GestorDB {
 			stmt.execute(i22);
 			stmt.execute(i23);
 			
-			System.out.println("Tablas precargadas con éxito");
+			System.out.println("Tablas precargadas con ï¿½xito");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -131,7 +129,8 @@ public class GestorDB {
 	}
 	
 	/**
-	 * @return
+	 * metodo que permite optener los tipos de restaurantes 
+	 * @return devuele los tipos de restaurantes en la db
 	 */
 	public static ArrayList<TipoRestaurante> getTiposRestaurantes() {
 		ArrayList<TipoRestaurante> tiposRestaurantes = new ArrayList();
