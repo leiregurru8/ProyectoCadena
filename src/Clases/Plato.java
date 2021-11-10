@@ -17,6 +17,11 @@ public class Plato {
 	private int idTipoPlato;
 	private int precio;
 	private int idRest;
+	
+	public Plato() {
+		
+	}
+	
 	/**
 	 * Constructor del objeto Plato
 	 * @param idPlato

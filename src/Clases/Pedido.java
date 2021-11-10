@@ -14,6 +14,10 @@ public class Pedido {
 	private int idCliente;
 	private	String direccionEntrega;
 	private String fechaPedido;
+	
+	public Pedido() {
+		
+	}
 	/**
 	 * Constructor del objeto Pedido
 	 * @param idPedido

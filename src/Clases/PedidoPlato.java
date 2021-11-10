@@ -14,7 +14,11 @@ public class PedidoPlato {
 	private int idPedido;
 	private int idPlato;
 	private int cantidad;
-/**
+
+	public PedidoPlato() {
+		
+	}
+	/**
  * Constructor del objeto pedidoPlato
  * @param idPedido
  * @param idPlato

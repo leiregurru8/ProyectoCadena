@@ -16,6 +16,11 @@ public class Restaurante {
 	private String direccion;
 	private int idTipoRestaurante;
 	private boolean entrega;
+	
+	public Restaurante() {
+		
+	}
+	
 	/**
 	 * Contructor del objeto Restaurante
 	 * @param idRest

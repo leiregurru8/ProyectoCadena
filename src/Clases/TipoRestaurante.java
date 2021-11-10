@@ -9,6 +9,11 @@ package clases;
 public class TipoRestaurante {
 	private int idTipoRestaurante;
 	private String Nombre;
+	
+	public TipoRestaurante() {
+		
+	}
+	
 	/**
 	 * constructor del tipo restaurante
 	 * @param idTipoRestaurante

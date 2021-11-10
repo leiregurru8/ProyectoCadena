@@ -12,6 +12,11 @@ public class TipoPlato {
 	 */
 	private int idTipoPlato;
 	private String nombre; 
+	
+	public TipoPlato () {
+		
+	}
+	
 	/**
 	 * constructor del tipoPlato
 	 * @param idTipoPlato

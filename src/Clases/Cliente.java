@@ -13,6 +13,10 @@ public class Cliente {
 	private String apellidos;
 	private String email;
 	private String contrasenya;
+	
+	public Cliente() {
+		
+	}
 	/**
 	 * Constructor del objeto cliente
 	 * @param idCliente
