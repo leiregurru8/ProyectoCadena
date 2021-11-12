@@ -150,7 +150,7 @@ public class GestorDB {
 	}
 	
 	public static void crearCliente(Cliente cliente) throws SQLException{
-		PreparedStatement pstmt = con.prepareStatement("INSERT INTRO Cliente(?, ?, ?, ?, ?");
+		PreparedStatement pstmt = con.prepareStatement("INSERT INTRO Cliente(?, ?, ?, ?, ?);");
 		pstmt.setInt(1, cliente.getIdCliente());
 		pstmt.setString(2, cliente.getNombre());
 		pstmt.setString(3, cliente.getApellidos());
@@ -159,5 +159,10 @@ public class GestorDB {
 		pstmt.execute();
 	}
 	
-	public static ResultSet(String email, String contrasenya)
+	public static ResultSet ResultSet(String email, String contrasenya) throws SQLException{
+		PreparedStatement pstmt = con.prepareStatement("SELECT * FROM Cliente WHERE Email = ? AND Contrasena = ?;");
+		pstmt.setString(1, email);
+		pstmt.setString(2, contrasenya);
+		return pstmt.executeQuery();
+	}
 }
