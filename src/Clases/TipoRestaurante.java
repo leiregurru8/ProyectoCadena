@@ -2,7 +2,7 @@ package clases;
 /**
  * Clase para el tipo de restaurante
  * @author Leire Gurrutxaga
- * @author Julen Alboniga-menor
+ * @author Julen Alboniga-Menor
  * @author Pablo Alberdi
  */
 
@@ -16,39 +16,39 @@ public class TipoRestaurante {
 	
 	/**
 	 * constructor del tipo restaurante
-	 * @param idTipoRestaurante
-	 * @param nombre
+	 * @param idTipoRestaurante identificador unico para cada tipo de restaurante
+	 * @param nombre nombre del tipo del restaurnate
 	 */
 	public TipoRestaurante(int idTipoRestaurante, String nombre) {
 		this.idTipoRestaurante = idTipoRestaurante;
 		Nombre = nombre;
 	}
 	/**
-	* obtiene el id del tipo de restaurante
- 	* @return idtipoRestaurante
+	* Devuelve idTipoRestaurante
+ 	* @return idTipoRestaurante identificador unico para cada tipo de restaurante
  	*/
 	public int getIdTipoRestaurante() {
 		return idTipoRestaurante;
 	}
 	/**
-	 * define el tipo de restaurante
-	 * @param idTipoRestaurante
+	 * Establece idTipoRestaurante
+	 * @param idTipoRestaurante identificador unico para cada tipo de restaurante
 	 */
 
 	public void setIdTipoRestaurante(int idTipoRestaurante) {
 		this.idTipoRestaurante = idTipoRestaurante;
 	}
 	/**
-	 * obtiene el nombre del tipo de restaurante
-	 * @return nombre
+	 * Devuelve nombre
+	 * @return nombre del tipo del restaurnate
 	 */
 
 	public String getNombre() {
 		return Nombre;
 	}
 	/**
-	 * define el nombre del tipo de restaurante
-	 * @param nombre
+	 * Establece nombre
+	 * @param nombre del tipo del restaurnate
 	 */
 	public void setNombre(String nombre) {
 		Nombre = nombre;

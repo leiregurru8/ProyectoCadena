@@ -21,9 +21,6 @@ public class PedidoTest {
 	private Pedido a;
 	@Before
 	public void setUp() throws Exception {
-		/**
-		 * Creamos el pedido
-		 */
 		a=new Pedido(1,2,"Tenis Ondarreta","09/10/2021");
 		
 		
@@ -33,11 +30,11 @@ public class PedidoTest {
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Test de la función setter de la direcionEntrega
+	 */
 	@Test
-	public void test() {
-		/**
-		 * vemos si se modifica correctamente
-		 */
+	public void testSetDireccionEntrega() {
 	a.setDireccionEntrega("deusto");
 	 assertEquals("deusto",a.getDireccionEntrega());
 	}

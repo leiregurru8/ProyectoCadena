@@ -3,14 +3,12 @@ package clases;
 /**
  * Clase para el objeto plato y sus atributos
  * @author Leire Gurrutxaga
- * @author Julen Alboniga-menor
+ * @author Julen Alboniga-Menor
  * @author Pablo Alberdi
  */
 
 public class Plato {
-	/**
-	 * atributos de la clase plato
-	 */
+	
 	private int idPlato;
 	private String nombre;
 	private String description;
@@ -24,12 +22,12 @@ public class Plato {
 	
 	/**
 	 * Constructor del objeto Plato
-	 * @param idPlato
-	 * @param nombre
-	 * @param description
-	 * @param idTipoPlato
-	 * @param precio
-	 * @param idRest
+	 * @param idPlato identificador unico para cada plato
+	 * @param nombre nombre del plato
+	 * @param description descripcion breve de cada plato que contiene informacion del plato
+	 * @param idTipoPlato identificador unico para cada tipo de plato
+	 * @param precio precio del plato
+	 * @param idRest identificador unico para cada restaurante
 	 */
 	public Plato(int idPlato, String nombre, String description, int idTipoPlato, int precio, int idRest) {
 		
@@ -41,85 +39,85 @@ public class Plato {
 		this.idRest = idRest;
 	}
 	/**
-	 * devuelve el id del plato
-	 * @return idPlato
+	 * Devuelve idPlato
+	 * @return idPlato identificador unico para cada plato
 	 */
 	public int getIdPlato() {
 		return idPlato;
 	}
 	/**
-	 * define el id del plato
-	 * @param idPlato
+	 * Establece idPlato
+	 * @param idPlato identificador unico para cada plato
 	 */
 	public void setIdPlato(int idPlato) {
 		this.idPlato = idPlato;
 	}
 	/**
-	 * devuelve el nombre del plato
-	 * @return nombre
+	 * Devuelve nombre 
+	 * @return nombre nombre del plato
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 	/**
-	 * define el nombre del plato
-	 * @param nombre
+	 * Establece nombre
+	 * @param nombre nombre del plato
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	/**
-	 * devuelve el descripcion del plato
-	 * @return description
+	 * Devuelve el description
+	 * @return description descripcion breve de cada plato que contiene informacion del plato
 	 */
 	public String getDescription() {
 		return description;
 	}
 	/**
-	 * define la descripcion del plato
-	 * @param description
+	 * Establece description
+	 * @param description descripcion breve de cada plato que contiene informacion del plato
 	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 	/**
-	 * devuelve el id del tipoplato
-	 * @return idTipoPlato
+	 * Devuelve idTipoPlato
+	 * @return idTipoPlato identificador unico para cada tipo de plato
 	 */
 	public int getIdTipoPlato() {
 		return idTipoPlato;
 	}
 	/**
-	 * define el id del tipoPlato
-	 * @param idTipoPlato
+	 * Establece idTipoPlato
+	 * @param idTipoPlato identificador unico para cada tipo de plato
 	 */
 	public void setIdTipoPlato(int idTipoPlato) {
 		this.idTipoPlato = idTipoPlato;
 	}
 	/**
-	 * devuelve el precio del plato
-	 * @return precio
+	 * Devuelve precio 
+	 * @return precio precio del plato
 	 */
 	public int getPrecio() {
 		return precio;
 	}
 	/**
-	 * define el precio del plato
-	 * @param precio
+	 * Establece precio
+	 * @param precio precio del plato
 	 */
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 	/**
-	 * devuelve el id del restaurante
-	 * @return idRest
+	 * Devuelve idRest
+	 * @return idRest identificador unico para cada restaurante
 	 */
 	public int getIdRest() {
 		return idRest;
 	}
 	/**
-	 * define el id del restaurante 
-	 * @param idRest
+	 * Establece idRest 
+	 * @param idRest identificador unico para cada restaurante
 	 */
 	public void setIdRest(int idRest) {
 		this.idRest = idRest;

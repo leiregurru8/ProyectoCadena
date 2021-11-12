@@ -1,16 +1,18 @@
 package tests;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import clases.Cliente;
 
 class ClienteTest {
 	private Cliente a;
-	@BeforeEach
+	@BeforeClass
 	void setUp() throws Exception {
 		a=new Cliente();
 		a.setNombre("Pablo");
@@ -18,7 +20,7 @@ class ClienteTest {
 		a.setEmail("palberdi2000@gmail.com");
 	}
 
-	@AfterEach
+	@AfterClass
 	void tearDown() throws Exception {
 	}
 

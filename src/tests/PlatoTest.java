@@ -1,24 +1,29 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import clases.Plato;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 
 class PlatoTest {
 	private Plato a;
 	
-	@BeforeEach
+	@BeforeClass
 	void setUp() throws Exception {
 		a=new Plato();
 		a.setIdPlato(1);
 	}
 
-	@AfterEach
+	@AfterClass
 	void tearDown() throws Exception {
 	}
 

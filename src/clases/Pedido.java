@@ -3,13 +3,11 @@ package clases;
 /**
  * Clase para crear objeto pedido
  * @author Leire Gurrutxaga
- * @author Julen Alboniga-menor
+ * @author Julen Alboniga-Menor
  * @author Pablo Alberdi
  */
 public class Pedido {
-	/**
-	 * Atributos del objeto pedido
-	 */
+	
 	private int idPedido;
 	private int idCliente;
 	private	String direccionEntrega;
@@ -20,10 +18,10 @@ public class Pedido {
 	}
 	/**
 	 * Constructor del objeto Pedido
-	 * @param idPedido
-	 * @param idCliente
-	 * @param direccionEntrega
-	 * @param fechaPedido
+	 * @param idPedido identificador unico para cada pedido
+	 * @param idCliente identificador unico para cada cliente
+	 * @param direccionEntrega direccion de entrega que el cliente asigna a cada pedido
+	 * @param fechaPedido fecha del pedido
 	 */
 	public Pedido(int idPedido, int idCliente, String direccionEntrega, String fechaPedido) {
 		
@@ -33,57 +31,57 @@ public class Pedido {
 		this.fechaPedido = fechaPedido;
 	}
 	/**
-	 * metodo get para obtener id del pedido
-	 * @return devuelve el id del pedido
+	 * Devuelve el idPedido
+	 * @return  idPedido identificador unico para cada pedido
 	 */
 	public int getIdPedido() {
 		return idPedido;
 	}
 	/**
-	 * define el id del pedido
-	 * @param idPedido parametro tipo int para definirlo en el objeto
+	 * Establece el idPedido
+	 * @param idPedido identificador unico para cada pedido
 	 */
 	public void setIdPedido(int idPedido) {
 		this.idPedido = idPedido;
 	}
 	/**
-	 * metodo get para obtener el id del cliente
-	 * @return devuelve el id del cliente
+	 * Devuelve el idCliente
+	 * @return idCliente el identificador unico para cada cliente
 	 */
 	public int getIdCliente() {
 		return idCliente;
 	}
 	/**
-	 * define el id del Cliente
-	 * @param idCliente parametro tipo int que se define en el objeto Cliente
+	 * Establece el idCliente
+	 * @param idCliente el identificador unico para cada cliente
 	 */
 	public void setIdCliente(int idCliente) {
 		this.idCliente = idCliente;
 	}
 	/**
-	 * metodo get para obtener la direccion de entrega
-	 * @return devuelve la direccion de entrega 
+	 * Devuelve direccionEntrega
+	 * @return direccionEntrega direccion entrega que el cliente asigna a cada pedido 
 	 */
 	public String getDireccionEntrega() {
 		return direccionEntrega;
 	}
 	/**
-	 * define la direccion de entrega del pedido
-	 * @param direccionEntrega parametro tipo String 
+	 * Establece direccionEntrega
+	 * @param direccionEntrega direccion entrega que el cliente asigna a cada pedido 
 	 */
 	public void setDireccionEntrega(String direccionEntrega) {
 		this.direccionEntrega = direccionEntrega;
 	}
 	/**
-	 * metodo get para obtener la fecha del pedido
-	 * @return devuelve la fecha del pedido
+	 * Devuelve fechaPedido
+	 * @return fechaPedido fecha del pedido
 	 */
 	public String getFechaPedido() {
 		return fechaPedido;
 	}
 	/**
-	 * define la fecha del pedido 
-	 * @param fechaPedido parametro tipo String 
+	 * Establece fechaPedido
+	 * @param fechaPedido fecha del pedido 
 	 */
 	public void setFechaPedido(String fechaPedido) {
 		this.fechaPedido = fechaPedido;
