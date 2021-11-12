@@ -1,13 +1,11 @@
 package clases;
 /**
  * @author Leire Gurrutxaga
- * @author Julen Alboniga-menor
+ * @author Julen Alboniga-Menor
  * @author Pablo Alberdi
  */
 public class Cliente {
-	/**
-	 * Atributos del cliente
-	 */
+	
 	private int idCliente;
 	private String nombre;
 	private String apellidos;
@@ -19,11 +17,11 @@ public class Cliente {
 	}
 	/**
 	 * Constructor del objeto cliente
-	 * @param idCliente
-	 * @param nombre
-	 * @param apellidos
-	 * @param email
-	 * @param contrasenya
+	 * @param idCliente identificador unico de cada cliente
+	 * @param nombre	nombre del cliente
+	 * @param apellidos	apellido del cliente
+	 * @param email		email del cliente
+	 * @param contrasenya	contraseña del cliente
 	 */
 	public Cliente(int idCliente, String nombre, String apellidos, String email, String contrasenya) {
 		
@@ -33,71 +31,73 @@ public class Cliente {
 		this.email = email;
 		this.contrasenya = contrasenya;
 	}
+	
 	/**
-	 * @return metodo que devuelve el id del cliente
+	 * Devuelve el idCliente
+	 * @return idCliente identificador unico de cada cliente
 	 */
 	public int getIdCliente() {
 		return idCliente;
 	}
 	/**
-	 * metodo que define el idcliente
-	 * @param idCliente parametro tipo int que definira el id
+	 * Establece el idcliente
+	 * @param idCliente identificador unico de cada cliente
 	 */
 	public void setIdCliente(int idCliente) {
 		this.idCliente = idCliente;
 	}
 	/**
-	 * 
-	 * @return metodo que devuelve el nombre del cliente
+	 * Devuelve el nombre
+	 * @return nombre del cliente
 	 */
 	public String getNombre() {
 		return nombre;
 	}
 	/**
-	 * metodo que define el nombre
-	 * @param nombre parametro tipo String que define el nombre del cliente
+	 * Establece el nombre
+	 * @param nombre del cliente
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	/**
-	 * 
-	 * @return metodo que devuelve el apellido del cliente
+	 * Devuelve el apellido
+	 * @return apellido del cliente
 	 */
 	public String getApellidos() {
 		return apellidos;
 	}
 	/**
-	 * metodo que define los apellidos
-	 * @param apellidos parametro tipo String que define los apellidos del cliente
+	 * Establece el apellido
+	 * @param apellido del cliente
 	 */
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
 	/**
-	 * 
-	 * @return metodo que devuelve el email del cliente
+	 * Devuelve el email del cliente
+	 * @return  email del cliente
 	 */
 	public String getEmail() {
 		return email;
 	}
 	/**
-	 * metodo para definir el email
-	 * @param email parametro tipo String que define el email
+	 * Establece el email
+	 * @param email del cliente
 	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
 	/**
-	 * 
-	 * @return metodo que devuelve el contrasenya del cliente
+	 * Devuelve la contraseña
+	 * @return contraseña del cliente
 	 */
 	public String getContrasenya() {
 		return contrasenya;
 	}
 	/**
-	 * metodo para definir contrasenya
-	 * @param contrasenya parametro String para definir la contraseÃ±a
+	 * Establece la contraseña
+	 * @param contraseña del cliente
 	 */
 	public void setContrasenya(String contrasenya) {
 		this.contrasenya = contrasenya;

@@ -11,6 +11,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PantallaInicio extends JFrame {
 
@@ -65,6 +67,13 @@ public class PantallaInicio extends JFrame {
 		contentPane.add(lblContrasea);
 		
 		JButton btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PantallaRegistrarse pantallaRegistrarse = new PantallaRegistrarse();
+				pantallaRegistrarse.setVisible(true);
+				dispose();
+			}
+		});
 		btnRegistrarse.setBounds(15, 199, 115, 29);
 		contentPane.add(btnRegistrarse);
 		
@@ -73,6 +82,11 @@ public class PantallaInicio extends JFrame {
 		contentPane.add(btnAceptar);
 		
 		JButton btnSalir = new JButton("Salir");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		btnSalir.setBounds(298, 199, 115, 29);
 		contentPane.add(btnSalir);
 		

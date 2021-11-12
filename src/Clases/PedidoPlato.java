@@ -3,14 +3,12 @@ package clases;
 /**
  * Clase que relaciona el pedido con el plato
  * @author Leire Gurrutxaga
- * @author Julen Alboniga-menor
+ * @author Julen Alboniga-Menor
  * @author Pablo Alberdi
  */
 
 public class PedidoPlato {
-	/**
-	 * atributos de la clase pedidoPlato
-	 */
+	
 	private int idPedido;
 	private int idPlato;
 	private int cantidad;
@@ -20,9 +18,9 @@ public class PedidoPlato {
 	}
 	/**
  * Constructor del objeto pedidoPlato
- * @param idPedido
- * @param idPlato
- * @param cantidad
+ * @param idPedido identificador unico para cada pedido
+ * @param idPlato	identificador unico para cada plato
+ * @param cantidad la cantidad de tipo de comida que elije el cliente en cada pedido
  */
 	public PedidoPlato(int idPedido, int idPlato, int cantidad) {
 		
@@ -31,43 +29,43 @@ public class PedidoPlato {
 		this.cantidad = cantidad;
 	}
 	/**
-	 * metodo get para obtener el id del pedido
-	 * @return devuelve el id del pedido
+	 * Devuelve idPedido
+	 * @return idPedido identificador unico para cada pedido
 	 */
 	public int getIdPedido() {
 		return idPedido;
 	}
 	/**
-	 * define el id del pedido 	
-	 * @param idPedido parametro tipo int que define el id del pedido
+	 * Establece idPedido 	
+	 * @param idPedido identificador unico para cada pedido
 	 */
 	public void setIdPedido(int idPedido) {
 		this.idPedido = idPedido;
 	}
 	/**
-	 * metodo get que devuelve el id del plato	
-	 * @return idPlato
+	 * Devuelve idPlato	
+	 * @return idPlato identificador unico para cada plato
 	 */
 	public int getIdPlato() {
 		return idPlato;
 	}
 	/**
-	 * define el id del plato	
-	 * @param idPlato parametro int 
+	 * Establece idplato	
+	 * @param idPlato identificador unico para cada plato 
 	 */
 	public void setIdPlato(int idPlato) {
 		this.idPlato = idPlato;
 	}
 	/**
-	 * metodo get que obtiene la cantidad de platos
-	 * @return cantidad de platos
+	 * Devuelve cantidad
+	 * @return cantidad la cantidad de tipo de comida que elije el cliente en cada pedido
 	 */
 	public int getCantidad() {
 		return cantidad;
 	}
 	/**
-	 * defina cantidad de platos 
-	 * @param cantidad parametro tipo int
+	 * Establece cantidad
+	 * @param cantidad la cantidad de tipo de comida que elije el cliente en cada pedido
 	 */
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
