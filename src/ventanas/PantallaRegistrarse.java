@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PantallaRegistrarse extends JFrame {
 
@@ -82,6 +84,11 @@ public class PantallaRegistrarse extends JFrame {
 		contentPane.add(btnAceptar);
 		
 		JButton btnSalir = new JButton("Salir");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnSalir.setBounds(124, 350, 115, 29);
 		contentPane.add(btnSalir);

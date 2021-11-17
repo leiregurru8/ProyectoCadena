@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PantallaPrincipal extends JFrame {
 
@@ -54,6 +56,11 @@ public class PantallaPrincipal extends JFrame {
 		contentPane.add(btnTurco);
 		
 		JButton btnSalir = new JButton("Salir");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 		btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnSalir.setBounds(163, 315, 115, 29);
 		contentPane.add(btnSalir);
