@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import Clases.Alumno;
+
 /**
  * Clase est�tica para gestionar la conexi�n con la base de datos
  * @author Pablo Alberdi
@@ -165,4 +167,20 @@ public class GestorDB {
 		pstmt.setString(2, contrasenya);
 		return pstmt.executeQuery();
 	}
+	
+	public static ArrayList<Plato> getPlatos() {
+    	Statement stmt;
+    	ArrayList<Plato> platos = new ArrayList<>();
+		try {
+			stmt = con.createStatement();
+			ResultSet res = stmt.executeQuery("SELECT * FROM PLATO");
+			while (res.next()) {
+				platos.add(new Plato(res.getInt("idPlato"), res.getString("Nombre"), res.getString("Descripcion"),res.getInt("idTipoPlato"),res.getInt("Precio"),res.getInt("idRestaurante")));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return platos;
+    }
 }
