@@ -104,7 +104,12 @@ public class Restaurante {
 	public void setEntrega(boolean entrega) {
 		this.entrega = entrega;
 	}
-	
 
+	@Override
+	public String toString() {
+		return nombre;
+	}
+	
+	
 
 }

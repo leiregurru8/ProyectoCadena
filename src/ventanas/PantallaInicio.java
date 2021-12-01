@@ -6,12 +6,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clases.Cliente;
+import clases.GestorDB;
+
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 import java.awt.event.ActionEvent;
 
 public class PantallaInicio extends JFrame {
@@ -27,6 +34,7 @@ public class PantallaInicio extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					GestorDB.conectar();
 					PantallaInicio frame = new PantallaInicio();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -78,6 +86,29 @@ public class PantallaInicio extends JFrame {
 		contentPane.add(btnRegistrarse);
 		
 		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(e -> {
+			String email = textField.getText();
+			String contrasenya = new String(passwordField.getPassword());
+			try {
+				ResultSet res = GestorDB.iniciarSesion(email, contrasenya);
+				if (res.next()) {
+					//Login valido
+					Cliente.idCliente = res.getInt("idCliente");
+					Cliente.nombre = res.getString("Nombre");
+					Cliente.apellidos = res.getString("Apellidos");
+					Cliente.email = res.getString("Email");
+					JFrame pantallaPrincipal = new PantallaPrincipal();
+					pantallaPrincipal.setVisible(true);
+					dispose();
+				} else {
+					//Login invalido
+					JOptionPane.showMessageDialog(contentPane, "Usuario o contrasena erroneos, pruebe otra vez");
+				}
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
 		btnAceptar.setBounds(159, 199, 115, 29);
 		contentPane.add(btnAceptar);
 		

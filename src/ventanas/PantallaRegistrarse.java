@@ -6,12 +6,18 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clases.GestorDB;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
 
 public class PantallaRegistrarse extends JFrame {
 
@@ -19,7 +25,7 @@ public class PantallaRegistrarse extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JTextField textField_3;
+	private JPasswordField passwordField;
 
 
 	/**
@@ -73,12 +79,31 @@ public class PantallaRegistrarse extends JFrame {
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(188, 306, 146, 26);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		passwordField = new JPasswordField();
+		passwordField.setBounds(188, 306, 146, 26);
+		contentPane.add(passwordField);
 		
 		JButton btnAceptar = new JButton("Aceptar");
+		btnAceptar.addActionListener(e -> {
+			String nombre = textField.getText();
+			String apellidos = textField_1.getText();
+			String email = textField_2.getText();
+			String contrasenya = new String(passwordField.getPassword());
+			
+			try {
+				if(GestorDB.crearCliente(nombre, apellidos, email, contrasenya)) {
+					//Registro correcto
+					JFrame pantallaPrincipal = new PantallaPrincipal();
+					pantallaPrincipal.setVisible(true);
+					dispose();
+				} else {
+					//Registro fallido
+					JOptionPane.showMessageDialog(contentPane, "Error al registrarse, pruebe otra vez");
+				}
+			} catch (Exception e1) {
+				JOptionPane.showMessageDialog(contentPane, "Error al registrarse, pruebe otra vez");
+			}
+		});
 		btnAceptar.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnAceptar.setBounds(263, 350, 115, 29);
 		contentPane.add(btnAceptar);
@@ -92,6 +117,7 @@ public class PantallaRegistrarse extends JFrame {
 		btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btnSalir.setBounds(124, 350, 115, 29);
 		contentPane.add(btnSalir);
+		
 	}
 
 }

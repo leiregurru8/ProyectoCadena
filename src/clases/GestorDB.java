@@ -8,7 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import Clases.Alumno;
+import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
+
 
 /**
  * Clase est�tica para gestionar la conexi�n con la base de datos
@@ -79,9 +81,9 @@ public class GestorDB {
 			String i4 = "INSERT OR IGNORE INTO TipoRest(idTipoRest, Nombre) VALUES(4, 'Turco');";
 			//RESTAURANTE
 			String i5 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(1, 'Tagliatelle', 'Calle San Mart�n', 1, 0);";
-			String i6 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(2, 'El Chile Pic�n', 'Plaza Nafarroa', 2, 1);";
-			String i7 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(3, 'Tagliatelle', 'Calle San Mart�n', 3, 1);";
-			String i8 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(4, 'Tagliatelle', 'Calle San Mart�n', 4, 0);";
+			String i6 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(2, 'El Chile Picon', 'Plaza Nafarroa', 2, 1);";
+			String i7 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(3, 'Dragon feliz', 'Calle Easo', 3, 1);";
+			String i8 = "INSERT OR IGNORE INTO Restaurante(idRest, Nombre, Direccion, idTipoRest, Entrega) VALUES(4, 'Donner Good', 'Avenida de la Libertad', 4, 0);";
 			//TIPO PLATO
 			String i9 = "INSERT OR IGNORE INTO TipoPlato(idTipoPlato, Nombre) VALUES (1, 'Pizza');";
 			String i10 = "INSERT OR IGNORE INTO TipoPlato(idTipoPlato, Nombre) VALUES (2, 'Pasta');";
@@ -89,15 +91,15 @@ public class GestorDB {
 			String i12 = "INSERT OR IGNORE INTO TipoPlato(idTipoPlato, Nombre) VALUES (4, 'Platos principales');";
 			String i23 = "INSERT OR IGNORE INTO TipoPlato(idTipoPlato, Nombre) VALUES (5, 'Postres');";
 			//PLATOS
-			String i13 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(1, 'Pizza Carbonara', 'Nata, Champi�ones, Bacon', 1, 14.99, 1);";
-			String i14 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(2, 'Pizza Jamon y Queso', 'Tomate, Jam�n, Queso', 1, 9.99, 1);";
-			String i15 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(3, 'Tallarines Carbonara', 'Tallarines, Nata, Champi�ones, Bacon', 2, 12.99, 1);";
-			String i16 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(4, 'Raviollis de At�n', 'Raviollis, At�n, Salsa parmesano', 2, 10.99, 1);";
+			String i13 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(1, 'Pizza Carbonara', 'Nata, Champinones, Bacon', 1, 14.99, 1);";
+			String i14 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(2, 'Pizza Jamon y Queso', 'Tomate, Jamon, Queso', 1, 9.99, 1);";
+			String i15 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(3, 'Tallarines Carbonara', 'Tallarines, Nata, Champinones, Bacon', 2, 12.99, 1);";
+			String i16 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(4, 'Raviollis de Atun', 'Raviollis, Atun, Salsa parmesano', 2, 10.99, 1);";
 			String i17 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(5, 'Tacos', 'Carne desmechada, Pimiento Rojo, Pimiento Verde, Salsa Chiltepin', 4, 8.99, 2);";
 			String i18 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(6, 'Totopos', 'Nachos con guacamole, queso y creamcheese', 2, 7.99, 2);";
 			String i19 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(7, 'Galleta de la suerte', 'Descubre tu futuro', 5, 0.99, 3);";
-			String i20 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(8, 'Gyoza', 'Empanadillas de Pek�n', 3, 2.99, 3);";
-			String i21 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(9, 'Tataki de at�n', 'Tacos sabrosos de at�n', 4, 19.99, 3);";
+			String i20 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(8, 'Gyoza', 'Empanadillas de Pekin', 3, 2.99, 3);";
+			String i21 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(9, 'Tataki de atun', 'Tacos sabrosos de atun', 4, 19.99, 3);";
 			String i22 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(10, 'Kebab Especial', 'Carne, patatas fritas, lechuga, abundante salsa blanca', 4, 4.99, 4);";
 			
 			stmt.execute(i1);
@@ -124,7 +126,7 @@ public class GestorDB {
 			stmt.execute(i22);
 			stmt.execute(i23);
 			
-			System.out.println("Tablas precargadas con �xito");
+			System.out.println("Tablas precargadas con exito");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -135,13 +137,14 @@ public class GestorDB {
 	 * metodo que permite optener los tipos de restaurantes 
 	 * @return devuele los tipos de restaurantes en la db
 	 */
-	public static ArrayList<TipoRestaurante> getTiposRestaurantes() {
-		ArrayList<TipoRestaurante> tiposRestaurantes = new ArrayList();
+	public static DefaultListModel<TipoRestaurante> getTiposRestaurantes() {
+		
+		DefaultListModel<TipoRestaurante> tiposRestaurantes = new DefaultListModel<>();
 		try {
 			Statement stmt = con.createStatement();
 			ResultSet res = stmt.executeQuery("SELECT * FROM TipoRest");
 			while(res.next()) {
-				tiposRestaurantes.add(new TipoRestaurante(res.getInt("idTipoRest"), res.getString("Nombre")));
+				tiposRestaurantes.addElement(new TipoRestaurante(res.getInt("idTipoRest"), res.getString("Nombre")));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -151,29 +154,58 @@ public class GestorDB {
 		return tiposRestaurantes;
 	}
 	
-	public static void crearCliente(Cliente cliente) throws SQLException{
-		PreparedStatement pstmt = con.prepareStatement("INSERT INTRO Cliente(?, ?, ?, ?, ?);");
-		pstmt.setInt(1, cliente.getIdCliente());
-		pstmt.setString(2, cliente.getNombre());
-		pstmt.setString(3, cliente.getApellidos());
-		pstmt.setString(4, cliente.getEmail());
-		pstmt.setString(5, cliente.getContrasenya());
+	public static boolean crearCliente(String nombre, String apellidos, String email, String contrasenya) throws SQLException{
+		PreparedStatement pstmt = con.prepareStatement("INSERT INTO Cliente (Nombre, Apellidos, Email, Contrasena) VALUES (?, ?, ?, ?);");
+		pstmt.setString(1, nombre);
+		pstmt.setString(2, apellidos);
+		pstmt.setString(3, email);
+		pstmt.setString(4, contrasenya);
 		pstmt.execute();
+		ResultSet res = pstmt.getGeneratedKeys();
+		if (res.next()) {
+			int idCliente = res.getInt(1);
+			Cliente.idCliente = idCliente;
+			Cliente.nombre = nombre;
+			Cliente.apellidos = apellidos;
+			Cliente.email = email;
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 	
-	public static ResultSet ResultSet(String email, String contrasenya) throws SQLException{
+	public static ResultSet iniciarSesion(String email, String contrasenya) throws SQLException{
 		PreparedStatement pstmt = con.prepareStatement("SELECT * FROM Cliente WHERE Email = ? AND Contrasena = ?;");
 		pstmt.setString(1, email);
 		pstmt.setString(2, contrasenya);
 		return pstmt.executeQuery();
 	}
 	
-	public static ArrayList<Plato> getPlatos() {
-    	Statement stmt;
+	public static DefaultListModel<Restaurante> getRestaurantesPorTipo(int idTipoRestaurante) {
+    	PreparedStatement pstmt;
+    	DefaultListModel<Restaurante> restaurantes = new DefaultListModel();
+		try {
+			pstmt = con.prepareStatement("SELECT * FROM Restaurante WHERE idTipoRest = ?");
+			pstmt.setInt(1, idTipoRestaurante);
+			ResultSet res = pstmt.executeQuery();
+			while (res.next()) {
+				restaurantes.addElement(new Restaurante(res.getInt("idRest"), res.getString("Nombre"), res.getString("Direccion"), res.getInt("idTipoRest"), res.getBoolean("Entrega")));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return restaurantes;
+    }
+	
+	public static ArrayList<Plato> getPlatosPorRestaurante(int idRestaurante) {
+    	PreparedStatement pstmt;
     	ArrayList<Plato> platos = new ArrayList<>();
 		try {
-			stmt = con.createStatement();
-			ResultSet res = stmt.executeQuery("SELECT * FROM PLATO");
+			pstmt = con.prepareStatement("SELECT * FROM PLATO WHERE idRestaurante = ?");
+			pstmt.setInt(1, idRestaurante);
+			ResultSet res = pstmt.executeQuery();
 			while (res.next()) {
 				platos.add(new Plato(res.getInt("idPlato"), res.getString("Nombre"), res.getString("Descripcion"),res.getInt("idTipoPlato"),res.getInt("Precio"),res.getInt("idRestaurante")));
 			}
@@ -183,4 +215,5 @@ public class GestorDB {
 		}
 		return platos;
     }
+	
 }
