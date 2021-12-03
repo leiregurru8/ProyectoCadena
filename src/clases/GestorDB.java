@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
 
@@ -96,7 +97,7 @@ public class GestorDB {
 			String i15 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(3, 'Tallarines Carbonara', 'Tallarines, Nata, Champinones, Bacon', 2, 12.99, 1);";
 			String i16 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(4, 'Raviollis de Atun', 'Raviollis, Atun, Salsa parmesano', 2, 10.99, 1);";
 			String i17 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(5, 'Tacos', 'Carne desmechada, Pimiento Rojo, Pimiento Verde, Salsa Chiltepin', 4, 8.99, 2);";
-			String i18 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(6, 'Totopos', 'Nachos con guacamole, queso y creamcheese', 2, 7.99, 2);";
+			String i18 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(6, 'Totopos', 'Nachos con guacamole, queso y creamcheese', 3, 7.99, 2);";
 			String i19 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(7, 'Galleta de la suerte', 'Descubre tu futuro', 5, 0.99, 3);";
 			String i20 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(8, 'Gyoza', 'Empanadillas de Pekin', 3, 2.99, 3);";
 			String i21 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(9, 'Tataki de atun', 'Tacos sabrosos de atun', 4, 19.99, 3);";
@@ -199,12 +200,17 @@ public class GestorDB {
 		return restaurantes;
     }
 	
-	public static ArrayList<Plato> getPlatosPorRestaurante(int idRestaurante) {
+	public static ArrayList<Plato> getPlatosPorRestauranteYTipo(int idRestaurante, int idTipoPlato) {
     	PreparedStatement pstmt;
     	ArrayList<Plato> platos = new ArrayList<>();
 		try {
-			pstmt = con.prepareStatement("SELECT * FROM PLATO WHERE idRestaurante = ?");
+			pstmt = con.prepareStatement("SELECT * FROM Plato WHERE idRestaurante = ? AND idTipoPlato = ?");
 			pstmt.setInt(1, idRestaurante);
+			if (idTipoPlato == 0) {
+				pstmt.setString(2, "%");
+			} else {
+				pstmt.setInt(2, idTipoPlato);
+			}
 			ResultSet res = pstmt.executeQuery();
 			while (res.next()) {
 				platos.add(new Plato(res.getInt("idPlato"), res.getString("Nombre"), res.getString("Descripcion"),res.getInt("idTipoPlato"),res.getInt("Precio"),res.getInt("idRestaurante")));
@@ -216,4 +222,22 @@ public class GestorDB {
 		return platos;
     }
 	
+	public static DefaultComboBoxModel<TipoPlato> getTipoPlatoPorRestaurante(int idRestaurante) {
+		PreparedStatement pstmt;
+		DefaultComboBoxModel<TipoPlato> tiposPlato = new DefaultComboBoxModel<>();
+		tiposPlato.addElement(new TipoPlato(0, "Todos"));
+		try {
+			pstmt = con.prepareStatement("SELECT TipoPlato.idTipoPlato AS idTipoPlato, TipoPlato.Nombre AS Nombre FROM Plato, TipoPlato WHERE Plato.idTipoPlato = TipoPlato.idTipoPlato AND Plato.idRestaurante = ? GROUP BY TipoPlato.idTipoPlato");
+			pstmt.setInt(1, idRestaurante);
+			ResultSet res = pstmt.executeQuery();
+			while(res.next()) {
+				tiposPlato.addElement(new TipoPlato(res.getInt("idTipoPlato"), res.getString("Nombre")));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return tiposPlato;
+	}
 }

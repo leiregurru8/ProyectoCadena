@@ -53,4 +53,11 @@ public class TipoPlato {
 		nombre = nombre;
 	}
 
+	@Override
+	public String toString() {
+		return nombre;
+	}
+	
+	
+
 }

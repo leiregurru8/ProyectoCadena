@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import clases.Cliente;
 import clases.GestorDB;
+import clases.Restaurante;
 import clases.TipoRestaurante;
 
 import javax.swing.JLabel;
@@ -64,11 +65,28 @@ public class PantallaPrincipal extends JFrame {
 		contentPane.add(scrollPane_1);
 		
 		JList list_1 = new JList();
+		
 		scrollPane_1.setViewportView(list_1);
+		
+		JButton btnVerRestaurante = new JButton("Ver restaurante");
+		btnVerRestaurante.addActionListener(e -> {
+			Restaurante restaurante = (Restaurante) list_1.getSelectedValue();
+			PantallaPlatos ventanaRestaurante = new PantallaPlatos(this, restaurante);
+			ventanaRestaurante.setVisible(true);
+			this.setVisible(false);
+			
+		});
+		btnVerRestaurante.setEnabled(false);
+		btnVerRestaurante.setBounds(661, 118, 151, 29);
+		contentPane.add(btnVerRestaurante);
 		
 		list.addListSelectionListener(e -> {
 			TipoRestaurante tipoRestaurante = (TipoRestaurante) list.getSelectedValue();
 			list_1.setModel(GestorDB.getRestaurantesPorTipo(tipoRestaurante.getIdTipoRestaurante()));
+		});
+		
+		list_1.addListSelectionListener(e -> {
+			btnVerRestaurante.setEnabled(true);
 		});
 	}
 }
