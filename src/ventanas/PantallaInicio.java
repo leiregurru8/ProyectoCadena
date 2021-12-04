@@ -49,7 +49,7 @@ public class PantallaInicio extends JFrame {
 	 */
 	public PantallaInicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 645, 395);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -82,7 +82,7 @@ public class PantallaInicio extends JFrame {
 				dispose();
 			}
 		});
-		btnRegistrarse.setBounds(15, 199, 115, 29);
+		btnRegistrarse.setBounds(25, 226, 115, 29);
 		contentPane.add(btnRegistrarse);
 		
 		JButton btnAceptar = new JButton("Aceptar");
@@ -109,7 +109,7 @@ public class PantallaInicio extends JFrame {
 				e1.printStackTrace();
 			}
 		});
-		btnAceptar.setBounds(159, 199, 115, 29);
+		btnAceptar.setBounds(187, 226, 115, 29);
 		contentPane.add(btnAceptar);
 		
 		JButton btnSalir = new JButton("Salir");
@@ -118,12 +118,12 @@ public class PantallaInicio extends JFrame {
 				dispose();
 			}
 		});
-		btnSalir.setBounds(298, 199, 115, 29);
+		btnSalir.setBounds(356, 226, 115, 29);
 		contentPane.add(btnSalir);
 		
 		JLabel lblInicioSesin = new JLabel("INICIO SESI\u00D3N");
 		lblInicioSesin.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		lblInicioSesin.setBounds(113, 60, 150, 20);
+		lblInicioSesin.setBounds(208, 45, 150, 20);
 		contentPane.add(lblInicioSesin);
 	}
 }
