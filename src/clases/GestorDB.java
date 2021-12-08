@@ -102,18 +102,26 @@ public class GestorDB {
 			//PLATOS
 			String i13 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(1, 'Pizza Carbonara', 'Nata, Champinones, Bacon', 1, 14.99, 1);";
 			String i14 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(2, 'Pizza Jamon y Queso', 'Tomate, Jamon, Queso', 1, 9.99, 1);";
-			String i31 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(2, 'Pizza Bacon y Queso', 'Tomate, Bacon, Queso', 1, 9.99, 5);";
-			String i32 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(2, 'Pizza Barbacoa', 'Tomate, Barbacoa,Bacon, Queso', 1, 9.99, 6);";
-			String i33 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(2, 'Pizza Currito', 'Tomate,Nata,Huevo, Jamon, Queso', 1, 9.99, 5);";
-			String i34 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(2, 'Pizza 4 Quesos', 'Tomate, Emmental,Mozzarella,Azul,Queso', 1, 9.99, 1);";
+			String i31 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(11, 'Pizza Bacon y Queso', 'Tomate, Bacon, Queso', 1, 9.99, 5);";
+			String i32 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(12, 'Pizza Barbacoa', 'Tomate, Barbacoa,Bacon, Queso', 1, 9.99, 6);";
+			String i33 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(13, 'Pizza Currito', 'Tomate,Nata,Huevo, Jamon, Queso', 1, 9.99, 5);";
+			String i34 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(14, 'Pizza 4 Quesos', 'Tomate, Emmental,Mozzarella,Azul,Queso', 1, 9.99, 1);";
 			String i15 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(3, 'Tallarines Carbonara', 'Tallarines, Nata, Champinones, Bacon', 2, 12.99, 1);";
+			String i35 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(15, 'Tallarines Carbonara', 'Tallarines, Nata, Champinones, Bacon', 2, 12.99, 1);";
+			String i36 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(16, 'Tallarines Bolognesa', 'Tallarines, Nata, Champinones, Bacon', 2, 12.99, 6);";
+			String i37 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(17, 'Macarrones putanesca', 'Tallarines, Nata, Champinones, Bacon', 2, 12.99, 5);";
+			String i38 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(18, 'Lasagna', 'Carne picada, tomate bechamel, queso', 2, 14.99, 5);";
 			String i16 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(4, 'Raviollis de Atun', 'Raviollis, Atun, Salsa parmesano', 2, 10.99, 1);";
 			String i17 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(5, 'Tacos', 'Carne desmechada, Pimiento Rojo, Pimiento Verde, Salsa Chiltepin', 4, 8.99, 2);";
+			String i39 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(19, 'Nachos', 'Carne picada,Nachos, Cebolla,Pimientos, Queso fundido,Guacamole', 4, 8.99, 7);";
+			String i40 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(20, 'Chilli picante', 'Chilly, Pimiento Rojo, pimienta cayena', 4, 6.99, 8);";
 			String i18 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(6, 'Totopos', 'Nachos con guacamole, queso y creamcheese', 3, 7.99, 2);";
 			String i19 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(7, 'Galleta de la suerte', 'Descubre tu futuro', 5, 0.99, 3);";
 			String i20 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(8, 'Gyoza', 'Empanadillas de Pekin', 3, 2.99, 3);";
 			String i21 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(9, 'Tataki de atun', 'Tacos sabrosos de atun', 4, 19.99, 3);";
-			String i22 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(10, 'Kebab Especial', 'Carne, patatas fritas, lechuga, abundante salsa blanca', 4, 4.99, 4);";
+			String i22 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(10, 'Kebab Especial', 'Carne, patatas fritas, lechuga, abundante salsa blanca, pan de pita', 4, 4.99, 4);";
+			String i41 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(21, 'Durum Especial', 'Carne, patatas fritas, lechuga, abundante salsa blanca, tortilla de maiz', 4, 4.99, 11);";
+			String i42 = "INSERT OR IGNORE INTO Plato(idPlato, Nombre, Descripcion, idTipoPlato, Precio, idRestaurante) VALUES(22, 'Pedrata Especial', 'Carne, patatas fritas, lechuga, abundante salsa blanca', 4, 4.99, 12);";
 			
 			stmt.execute(i1);
 			stmt.execute(i2);
@@ -150,6 +158,15 @@ public class GestorDB {
 			stmt.execute(i32);
 			stmt.execute(i33);
 			stmt.execute(i34);
+			stmt.execute(i35);
+			stmt.execute(i36);
+			stmt.execute(i37);
+			stmt.execute(i38);
+			stmt.execute(i39);
+			stmt.execute(i40);
+			stmt.execute(i41);
+			stmt.execute(i42);
+			
 			
 			
 			System.out.println("Tablas precargadas con exito");
