@@ -146,6 +146,7 @@ public class GestorDB {
 			ResultSet res = stmt.executeQuery("SELECT * FROM TipoRest");
 			while(res.next()) {
 				tiposRestaurantes.addElement(new TipoRestaurante(res.getInt("idTipoRest"), res.getString("Nombre")));
+				System.out.println(res.getInt("idTipoRest") + " " + res.getString("Nombre"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

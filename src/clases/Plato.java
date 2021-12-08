@@ -13,7 +13,7 @@ public class Plato {
 	private String nombre;
 	private String description;
 	private int idTipoPlato;
-	private int precio;
+	private double precio;
 	private int idRest;
 	
 	public Plato() {
@@ -26,16 +26,16 @@ public class Plato {
 	 * @param nombre nombre del plato
 	 * @param description descripcion breve de cada plato que contiene informacion del plato
 	 * @param idTipoPlato identificador unico para cada tipo de plato
-	 * @param precio precio del plato
+	 * @param d precio del plato
 	 * @param idRest identificador unico para cada restaurante
 	 */
-	public Plato(int idPlato, String nombre, String description, int idTipoPlato, int precio, int idRest) {
+	public Plato(int idPlato, String nombre, String description, int idTipoPlato, double d, int idRest) {
 		
 		this.idPlato = idPlato;
 		this.nombre = nombre;
 		this.description = description;
 		this.idTipoPlato = idTipoPlato;
-		this.precio = precio;
+		this.precio = d;
 		this.idRest = idRest;
 	}
 	/**
@@ -98,14 +98,14 @@ public class Plato {
 	 * Devuelve precio 
 	 * @return precio precio del plato
 	 */
-	public int getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 	/**
 	 * Establece precio
 	 * @param precio precio del plato
 	 */
-	public void setPrecio(int precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 	/**

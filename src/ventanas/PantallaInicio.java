@@ -113,10 +113,8 @@ public class PantallaInicio extends JFrame {
 		contentPane.add(btnAceptar);
 		
 		JButton btnSalir = new JButton("Salir");
-		btnSalir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-			}
+		btnSalir.addActionListener(e->{
+			dispose();
 		});
 		btnSalir.setBounds(356, 226, 115, 29);
 		contentPane.add(btnSalir);
