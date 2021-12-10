@@ -22,9 +22,9 @@ public class PedidoPlato {
  * @param idPlato	identificador unico para cada plato
  * @param cantidad la cantidad de tipo de comida que elije el cliente en cada pedido
  */
-	public PedidoPlato(int idPedido, int idPlato, int cantidad) {
+	public PedidoPlato(int idPlato, int cantidad) {
 		
-		this.idPedido = idPedido;
+		this.idPedido = 0;
 		this.idPlato = idPlato;
 		this.cantidad = cantidad;
 	}

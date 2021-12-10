@@ -242,11 +242,11 @@ public class GestorDB {
 		return restaurantes;
     }
 	
-	public static ArrayList<Plato> getPlatosPorRestauranteYTipo(int idRestaurante, int idTipoPlato) {
+	public static DefaultListModel<Plato> getPlatosPorRestauranteYTipo(int idRestaurante, int idTipoPlato) {
     	PreparedStatement pstmt;
-    	ArrayList<Plato> platos = new ArrayList<>();
+    	DefaultListModel<Plato> platos = new DefaultListModel<>();
 		try {
-			pstmt = con.prepareStatement("SELECT * FROM Plato WHERE idRestaurante = ? AND idTipoPlato = ?");
+			pstmt = con.prepareStatement("SELECT * FROM Plato WHERE idRestaurante = ? AND idTipoPlato LIKE ?");
 			pstmt.setInt(1, idRestaurante);
 			if (idTipoPlato == 0) {
 				pstmt.setString(2, "%");
@@ -255,7 +255,7 @@ public class GestorDB {
 			}
 			ResultSet res = pstmt.executeQuery();
 			while (res.next()) {
-				platos.add(new Plato(res.getInt("idPlato"), res.getString("Nombre"), res.getString("Descripcion"),res.getInt("idTipoPlato"),res.getInt("Precio"),res.getInt("idRestaurante")));
+				platos.addElement(new Plato(res.getInt("idPlato"), res.getString("Nombre"), res.getString("Descripcion"),res.getInt("idTipoPlato"),res.getInt("Precio"),res.getInt("idRestaurante")));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

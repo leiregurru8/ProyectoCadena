@@ -122,6 +122,13 @@ public class Plato {
 	public void setIdRest(int idRest) {
 		this.idRest = idRest;
 	}
+
+	@Override
+	public String toString() {
+		return nombre;
+	}
+	
+	
 	
 	
 	

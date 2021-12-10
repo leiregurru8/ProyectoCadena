@@ -55,7 +55,7 @@ public class GestorDBTest {
 	}
 	@Test
 	public void test3() {
-		ArrayList<Plato>listaPlatosRestTipo=clases.GestorDB.getPlatosPorRestauranteYTipo(1, 1);
+		DefaultListModel<Plato>listaPlatosRestTipo=clases.GestorDB.getPlatosPorRestauranteYTipo(1, 1);
 		for (int i=0;i<listaPlatosRestTipo.size();i++) {
 			assertEquals(listaPlatosRestTipo.get(0).getNombre(), listaPlatosRestTipo.get(0).getNombre() );
 	}
