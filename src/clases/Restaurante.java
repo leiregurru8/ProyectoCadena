@@ -7,7 +7,7 @@ package clases;
  * @author Pablo Alberdi
  */
 
-public class Restaurante {
+public class Restaurante implements Comparable<Restaurante> {
 	
 	private int idRest;
 	private String nombre;
@@ -108,6 +108,12 @@ public class Restaurante {
 	@Override
 	public String toString() {
 		return nombre;
+	}
+
+
+	@Override
+	public int compareTo(Restaurante r) {
+		return this.nombre.compareTo(r.getNombre());
 	}
 	
 	

@@ -134,6 +134,17 @@ public class PantallaPlatos extends JFrame {
 		});
 		button_1.setBounds(540, 239, 45, 29);
 		contentPane.add(button_1);
+		
+		JButton btnSiguiente = new JButton("Siguiente");
+		btnSiguiente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PantallaPedido pantallaPedido = new PantallaPedido(platosPedido);
+				pantallaPedido.setVisible(true);
+				dispose();
+			}
+		});
+		btnSiguiente.setBounds(668, 396, 115, 29);
+		contentPane.add(btnSiguiente);
 		button_1.setVisible(false);
 		
 		comboBox.addActionListener(e -> {
@@ -169,7 +180,9 @@ public class PantallaPlatos extends JFrame {
 			lblNewLabel_1.setVisible(false);
 			lblNewLabel_2.setVisible(false);
 			button.setVisible(false);
+			button.setEnabled(false);
 			button_1.setVisible(false);
+			button_1.setEnabled(true);
 			lblCantidad.setVisible(false);
 			btnAadirAlPedido.setVisible(false);
 			label.setVisible(false);

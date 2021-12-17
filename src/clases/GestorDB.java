@@ -12,6 +12,8 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
 
+import utils.MergeSort;
+
 
 /**
  * Clase est�tica para gestionar la conexi�n con la base de datos
@@ -225,21 +227,22 @@ public class GestorDB {
 		return pstmt.executeQuery();
 	}
 	
-	public static DefaultListModel<Restaurante> getRestaurantesPorTipo(int idTipoRestaurante) {
+	public static ArrayList<Restaurante> getRestaurantesPorTipo(int idTipoRestaurante) {
     	PreparedStatement pstmt;
-    	DefaultListModel<Restaurante> restaurantes = new DefaultListModel();
+    	ArrayList<Restaurante> restaurantes = new ArrayList();
 		try {
 			pstmt = con.prepareStatement("SELECT * FROM Restaurante WHERE idTipoRest = ?");
 			pstmt.setInt(1, idTipoRestaurante);
 			ResultSet res = pstmt.executeQuery();
 			while (res.next()) {
-				restaurantes.addElement(new Restaurante(res.getInt("idRest"), res.getString("Nombre"), res.getString("Direccion"), res.getInt("idTipoRest"), res.getBoolean("Entrega")));
+				restaurantes.add(new Restaurante(res.getInt("idRest"), res.getString("Nombre"), res.getString("Direccion"), res.getInt("idTipoRest"), res.getBoolean("Entrega")));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return restaurantes;
+		MergeSort<Restaurante> mergeSortRestaurantes = new MergeSort<>();
+		return (ArrayList<Restaurante>) mergeSortRestaurantes.mergeSort(restaurantes);
     }
 	
 	public static DefaultListModel<Plato> getPlatosPorRestauranteYTipo(int idRestaurante, int idTipoPlato) {

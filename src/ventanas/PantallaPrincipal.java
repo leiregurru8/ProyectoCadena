@@ -15,8 +15,11 @@ import clases.TipoRestaurante;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Font;
+
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
@@ -82,7 +85,12 @@ public class PantallaPrincipal extends JFrame {
 		
 		list.addListSelectionListener(e -> {
 			TipoRestaurante tipoRestaurante = (TipoRestaurante) list.getSelectedValue();
-			list_1.setModel(GestorDB.getRestaurantesPorTipo(tipoRestaurante.getIdTipoRestaurante()));
+			ArrayList<Restaurante> restaurantes = GestorDB.getRestaurantesPorTipo(tipoRestaurante.getIdTipoRestaurante());
+			DefaultListModel<Restaurante> model = new DefaultListModel<>();
+			for(Restaurante r : restaurantes) {
+				model.addElement(r);
+			}	         
+			list_1.setModel(model);
 		});
 		
 		list_1.addListSelectionListener(e -> {

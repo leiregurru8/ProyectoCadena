@@ -48,7 +48,7 @@ public class GestorDBTest {
 	}
 	@Test
 	public void test2() {
-		DefaultListModel<Restaurante> listaResultante=clases.GestorDB.getRestaurantesPorTipo(1);
+		ArrayList<Restaurante> listaResultante=clases.GestorDB.getRestaurantesPorTipo(1);
 		for (int i=0;i<listaResultante.size();i++) {
 			assertEquals(listaRestauranteTipo.get(0).getNombre(), listaResultante.get(0).getNombre() );
 		}

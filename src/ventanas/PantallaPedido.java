@@ -2,10 +2,14 @@ package ventanas;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clases.PedidoPlato;
+
 import javax.swing.JLabel;
 import javax.swing.JButton;
 
@@ -18,7 +22,7 @@ public class PantallaPedido extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public PantallaPedido() {
+	public PantallaPedido(ArrayList<PedidoPlato> platosPedido) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 791, 351);
 		contentPane = new JPanel();
