@@ -285,4 +285,45 @@ public class GestorDB {
 		
 		return tiposPlato;
 	}
+	
+	public static void insertPedido(int idPedido,int idCliente, String direccion,String fecha){
+		
+		String sql= "INSERT INTO PEDIDO (idPedido,idCliente,DireccionEntrega,FechaPedido) VALUES ?,?,?,?";
+		PreparedStatement pstmt;
+		
+				try {
+					pstmt=con.prepareStatement(sql);
+					pstmt.setInt(1, idPedido);
+					pstmt.setInt(2, idCliente);
+					pstmt.setString(3, direccion);
+					pstmt.setString(4, fecha);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			
+			
+
+		
+	}
+	
+	public static void insertPedidoPlato(ArrayList<PedidoPlato> Pedidoplato) {
+		String sql= "INSERT INTO PEDIDO (idPedido,idCliente,DireccionEntrega,FechaPedido) VALUES ?,?,?,?";
+		PreparedStatement pstmt;
+		try {
+			for (int i=0;i<Pedidoplato.size();i++) {
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1, Pedidoplato.get(i).getIdPedido());
+				pstmt.setInt(2, 1);
+				
+			}
+			
+			
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
 }

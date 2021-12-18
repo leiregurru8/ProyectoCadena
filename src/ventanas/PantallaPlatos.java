@@ -39,6 +39,7 @@ public class PantallaPlatos extends JFrame {
 	private DefaultListModel<Plato> platos;
 	private int cantidad = 1;
 	private ArrayList<PedidoPlato> platosPedido = new ArrayList<>();
+	private double valorPedido = 0;
 
 
 	/**
@@ -138,7 +139,8 @@ public class PantallaPlatos extends JFrame {
 		JButton btnSiguiente = new JButton("Siguiente");
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				PantallaPedido pantallaPedido = new PantallaPedido(platosPedido);
+				PantallaPedido pantallaPedido = new PantallaPedido(platosPedido, valorPedido);
+				GestorDB.insertPedidoPlato(platosPedido);
 				pantallaPedido.setVisible(true);
 				dispose();
 			}
@@ -167,7 +169,7 @@ public class PantallaPlatos extends JFrame {
 			if (p != null) {
 				lblNewLabel.setText(p.getNombre());
 				lblNewLabel_1.setText(p.getDescription());
-				lblNewLabel_2.setText(p.getPrecio() + "€");
+				lblNewLabel_2.setText(p.getPrecio() + "ï¿½");
 			}
 			
 		});
@@ -175,6 +177,7 @@ public class PantallaPlatos extends JFrame {
 		btnAadirAlPedido.addActionListener(e -> {
 			platosPedido.add(new PedidoPlato(((Plato) list.getSelectedValue()).getIdPlato(), this.cantidad));
 			
+			valorPedido += ((Plato) list.getSelectedValue()).getPrecio() * this.cantidad;
 			list.clearSelection();
 			lblNewLabel.setVisible(false);
 			lblNewLabel_1.setVisible(false);
