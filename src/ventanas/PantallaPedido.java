@@ -14,6 +14,7 @@ import clases.PedidoPlato;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
 
 public class PantallaPedido extends JFrame {
 
@@ -47,6 +48,11 @@ public class PantallaPedido extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		JButton btnNewButton = new JButton("Realizar Pedido"); //insert en pedido
+		btnNewButton.addActionListener(e-> {
+			JFrame pantallaFinal=new PantallaFinal();
+			pantallaFinal.setVisible(true);
+		});
+
 		btnNewButton.setBounds(289, 223, 156, 29);
 		contentPane.add(btnNewButton);
 		
@@ -75,7 +81,6 @@ public class PantallaPedido extends JFrame {
 			String direccion = textField.getText();
 			String fecha = textField_1.getText();
 			
-			//aqui la insert
 			GestorDB.insertPedido(platosPedido.get(0).getIdPedido(), 1 ,direccion, fecha);
 			
 			

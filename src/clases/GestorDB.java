@@ -309,13 +309,13 @@ public class GestorDB {
 	}
 	
 	public static void insertPedidoPlato(ArrayList<PedidoPlato> Pedidoplato) {
-		String sql= "INSERT INTO PEDIDO (idPedido,idCliente,DireccionEntrega,FechaPedido) VALUES ?,?,?,?";
+		String sql= "INSERT INTO PEDIDO_PLATO (idPedido,idCliente) VALUES ?,1";
 		PreparedStatement pstmt;
 		try {
 			for (int i=0;i<Pedidoplato.size();i++) {
 				pstmt=con.prepareStatement(sql);
 				pstmt.setInt(1, Pedidoplato.get(i).getIdPedido());
-				pstmt.setInt(2, 1);
+				
 				
 			}
 			

@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PantallaFinal extends JFrame {
 
@@ -29,10 +31,6 @@ public class PantallaFinal extends JFrame {
 		lblNewLabel.setBounds(71, 73, 263, 29);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton("Finalizar");
-		btnNewButton.setBounds(123, 184, 117, 29);
-		contentPane.add(btnNewButton);
-		
 		JLabel lblNewLabel_1 = new JLabel("En breves momentos se realizará el envio.");
 		lblNewLabel_1.setBounds(71, 101, 277, 24);
 		contentPane.add(lblNewLabel_1);
@@ -44,6 +42,15 @@ public class PantallaFinal extends JFrame {
 		JLabel lblNewLabel_3 = new JLabel("Confirmación de pedido");
 		lblNewLabel_3.setBounds(114, 31, 190, 16);
 		contentPane.add(lblNewLabel_3);
+		
+		JButton btnNewButton = new JButton("Finalizar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+			}
+		});
+		btnNewButton.setBounds(123, 184, 117, 29);
+		contentPane.add(btnNewButton);
 	}
 
 }
