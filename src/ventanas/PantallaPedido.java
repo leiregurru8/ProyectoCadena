@@ -51,6 +51,7 @@ public class PantallaPedido extends JFrame {
 		btnNewButton.addActionListener(e-> {
 			JFrame pantallaFinal=new PantallaFinal();
 			pantallaFinal.setVisible(true);
+			dispose();
 		});
 
 		btnNewButton.setBounds(289, 223, 156, 29);

@@ -288,7 +288,7 @@ public class GestorDB {
 	
 	public static void insertPedido(int idPedido,int idCliente, String direccion,String fecha){
 		
-		String sql= "INSERT INTO PEDIDO (idPedido,idCliente,DireccionEntrega,FechaPedido) VALUES ?,?,?,?";
+		String sql= "INSERT INTO PEDIDO (idPedido,idCliente,DireccionEntrega,FechaPedido) VALUES (?,?,?,?)";
 		PreparedStatement pstmt;
 		
 				try {
@@ -297,28 +297,23 @@ public class GestorDB {
 					pstmt.setInt(2, idCliente);
 					pstmt.setString(3, direccion);
 					pstmt.setString(4, fecha);
+					pstmt.execute();
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				
-			
-			
-
-		
 	}
 	
 	public static void insertPedidoPlato(ArrayList<PedidoPlato> Pedidoplato) {
-		String sql= "INSERT INTO PEDIDO_PLATO (idPedido,idCliente) VALUES ?,1";
+		String sql= "INSERT INTO PEDIDO_PLATO (idPedido) VALUES (?)";
 		PreparedStatement pstmt;
 		try {
 			for (int i=0;i<Pedidoplato.size();i++) {
 				pstmt=con.prepareStatement(sql);
 				pstmt.setInt(1, Pedidoplato.get(i).getIdPedido());
-				
-				
+				pstmt.execute()	;
 			}
-			
 			
 			
 		}catch (Exception e) {

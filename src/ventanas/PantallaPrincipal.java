@@ -72,6 +72,8 @@ public class PantallaPrincipal extends JFrame {
 		scrollPane_1.setViewportView(list_1);
 		
 		JButton btnVerRestaurante = new JButton("Ver restaurante");
+		btnVerRestaurante.addActionListener(e-> {
+		});
 		btnVerRestaurante.addActionListener(e -> {
 			Restaurante restaurante = (Restaurante) list_1.getSelectedValue();
 			PantallaPlatos ventanaRestaurante = new PantallaPlatos(this, restaurante);
